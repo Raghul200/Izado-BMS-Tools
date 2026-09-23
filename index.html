@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izado BMS Tools</title>
+<meta name="description" content="Izado Solutions BMS Engineering Tools">
+<style>
+  :root{
+    --primary:#176b4d;
+    --primary-dark:#0f513a;
+    --secondary:#2f8f68;
+    --accent:#8fcf9b;
+    --mint:#eaf7ef;
+    --mint-2:#f5fbf7;
+    --text:#17352a;
+    --muted:#668075;
+    --border:#d8e9df;
+    --white:#ffffff;
+    --shadow:0 18px 45px rgba(23,107,77,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(circle at 10% 0%, rgba(143,207,155,.18), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(47,143,104,.10), transparent 28%),
+      var(--mint-2);
+  }
+  .topbar{
+    height:5px;
+    background:linear-gradient(90deg,#176b4d,#2f8f68,#8fcf9b);
+  }
+  header{
+    max-width:1180px;
+    margin:auto;
+    padding:28px 24px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand-mark{
+    width:46px;height:46px;border-radius:13px;
+    display:grid;place-items:center;
+    color:#fff;font-weight:900;font-size:20px;
+    background:linear-gradient(145deg,var(--primary),var(--secondary));
+    box-shadow:0 9px 20px rgba(23,107,77,.20);
+  }
+  .brand-name{font-size:22px;font-weight:800;letter-spacing:.4px}
+  .brand-sub{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:1.4px;text-transform:uppercase}
+  .status{
+    display:flex;align-items:center;gap:8px;
+    padding:8px 12px;border:1px solid var(--border);
+    background:rgba(255,255,255,.75);border-radius:999px;
+    font-size:12px;color:var(--muted);
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:#49a56f}
+  main{max-width:1180px;margin:auto;padding:44px 24px 70px}
+  .hero{
+    text-align:center;
+    max-width:850px;
+    margin:18px auto 52px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--mint);border:1px solid var(--border);
+    color:var(--primary);padding:8px 13px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.5px;
+  }
+  h1{font-size:clamp(38px,6vw,66px);line-height:1.02;margin:20px 0 16px;letter-spacing:-2.5px}
+  h1 span{color:var(--primary)}
+  .hero p{font-size:17px;line-height:1.7;color:var(--muted);margin:0 auto;max-width:720px}
+  .tools{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .card{
+    position:relative;overflow:hidden;
+    background:rgba(255,255,255,.92);
+    border:1px solid var(--border);
+    border-radius:24px;padding:28px;
+    box-shadow:var(--shadow);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+    display:flex;flex-direction:column;min-height:330px;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 25px 55px rgba(23,107,77,.15);border-color:#b8d9c7}
+  .card::after{
+    content:"";position:absolute;width:130px;height:130px;border-radius:50%;
+    right:-55px;top:-55px;background:rgba(143,207,155,.14)
+  }
+  .icon{
+    width:54px;height:54px;border-radius:16px;
+    display:grid;place-items:center;background:var(--mint);
+    color:var(--primary);font-size:25px;margin-bottom:22px;
+    border:1px solid var(--border);
+  }
+  .tag{
+    font-size:11px;font-weight:800;text-transform:uppercase;
+    letter-spacing:1px;color:var(--secondary);margin-bottom:8px;
+  }
+  h2{font-size:21px;margin:0 0 10px;line-height:1.25}
+  .card p{font-size:14px;line-height:1.65;color:var(--muted);margin:0 0 25px}
+  .button{
+    margin-top:auto;text-decoration:none;text-align:center;
+    display:block;padding:13px 16px;border-radius:13px;
+    background:var(--primary);color:#fff;font-size:14px;font-weight:750;
+    transition:.2s ease;
+  }
+  .button:hover{background:var(--primary-dark);transform:translateY(-1px)}
+  .footer{
+    margin-top:52px;padding-top:25px;border-top:1px solid var(--border);
+    display:flex;justify-content:space-between;gap:20px;
+    color:var(--muted);font-size:12px;
+  }
+  .footer strong{color:var(--primary)}
+  @media(max-width:850px){
+    .tools{grid-template-columns:1fr}
+    header{padding-left:18px;padding-right:18px}
+    main{padding-left:18px;padding-right:18px}
+    .status{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">I</div>
+    <div>
+      <div class="brand-name">IZADO</div>
+      <div class="brand-sub">BMS Engineering Tools</div>
+    </div>
+  </div>
+  <div class="status"><span class="dot"></span> Engineering Toolkit</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">🌿 Sustainable • Smart • Automated</div>
+    <h1>IZADO <span>BMS Tools</span></h1>
+    <p>A centralized workspace for BMS engineering, verification, documentation and commissioning utilities.</p>
+  </section>
+
+  <section class="tools">
+    <article class="card">
+      <div class="icon">📊</div>
+      <div class="tag">Engineering Utility</div>
+      <h2>Point List & HFAT Range Calculator</h2>
+      <p>Convert dump data into a structured Point List and calculate the required HFAT ranges efficiently.</p>
+      <a class="button" href="https://raghul200.github.io/Point_List_and_HFAT_Ranges_Caluculation/" target="_blank" rel="noopener noreferrer">Open Tool →</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🔗</div>
+      <div class="tag">Verification Tool</div>
+      <h2>ASP Binding Verification</h2>
+      <p>Verify BMS ASP bindings quickly and support faster engineering quality checks during project execution.</p>
+      <a class="button" href="https://raghul200.github.io/Izado-BMS-Binding-Tool-Version-1/" target="_blank" rel="noopener noreferrer">Open Tool →</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">✓</div>
+      <div class="tag">Document QA</div>
+      <h2>SAT / SFAT Document Reviewer</h2>
+      <p>Review SAT and SFAT documents for common engineering and documentation issues before submission.</p>
+      <a class="button" href="https://raghul200.github.io/SAT-Document-Checker/" target="_blank" rel="noopener noreferrer">Open Tool →</a>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <div><strong>IZADO Solutions</strong> · BMS Engineering Toolkit</div>
+    <div>Built for smarter engineering workflows</div>
+  </footer>
+</main>
+</body>
+</html>
